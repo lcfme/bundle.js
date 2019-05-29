@@ -45,7 +45,7 @@ function traverse(mod, visit) {
 function createTemplate(entrypath, mods) {
   let buf = [];
   buf.push(
-    '(function(global,mods){var loadedModules={};function __require__(id){if(loadedModules[id]){return loadedModules[id].exports}var mod={_id:id,exports:{}};try{mods[id].call(global,mod.exports,mod,__require__)}finally{loadedModules[id]=mod}return mod.exports}__require__("'
+    '(function(global,mods){var loadedModules={};function __require__(id){if(loadedModules[id]){return loadedModules[id].exports}var mod={_id:id,exports:{}};try{mods[id].call(global,mod.exports,mod,__require__)}finally{loadedModules[id]=mod}return mod.exports}return __require__("'
   );
   buf.push(entrypath);
   buf.push('")})(this,{');
